@@ -381,6 +381,45 @@ input.err,select.err,textarea.err{border-color:#DC2626!important}
 footer{background:var(--navy-deep);padding:28px 24px;text-align:center}
 footer p{color:rgba(255,255,255,.38);font-size:.78rem;line-height:1.8}
 footer span{color:var(--orange)}
+
+  .spk-hero-inner{
+  max-width:860px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:250px 1fr;
+  align-items:center;
+  gap:54px;
+}
+
+.spk-photo{
+  width:255px;
+  height:255px;
+  border:4px solid var(--orange);
+  border-radius:26px;
+  overflow:hidden;
+  background:var(--navy-mid);
+}
+
+.spk-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+}
+
+@media(max-width:700px){
+  .spk-hero-inner{
+    grid-template-columns:1fr;
+    text-align:center;
+    gap:28px;
+  }
+  .spk-photo{
+    margin:0 auto;
+    width:220px;
+    height:220px;
+  }
+}
 </style>
 </head>
 <body>
