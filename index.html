@@ -155,6 +155,31 @@ nav{
   border:1.5px solid var(--border);box-shadow:var(--sh);padding:22px
 }
 .a-icon{font-size:1.8rem;margin-bottom:8px}
+
+/* ── PROFESSIONAL ICON SYSTEM ───────────────────────────────── */
+.ico{width:1.05em;height:1.05em;display:inline-block;vertical-align:-.18em;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.pill .ico{width:16px;height:16px;color:currentColor}
+.a-icon,.shl-i,.fsi,.suc-icon{color:var(--navy)}
+.a-icon{
+  width:46px;height:46px;border-radius:14px;margin-bottom:12px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,rgba(244,124,32,.14),rgba(11,28,94,.07));
+  border:1px solid rgba(11,28,94,.08)
+}
+.a-icon .ico{width:23px;height:23px;color:var(--orange)}
+.who-tag{display:inline-flex;align-items:center;gap:7px}
+.who-tag .ico{width:15px;height:15px;color:currentColor}
+.shl-i{
+  width:34px;height:34px;border-radius:10px;margin-bottom:8px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(244,124,32,.12);border:1px solid rgba(244,124,32,.18)
+}
+.shl-i .ico{width:18px;height:18px;color:var(--orange)}
+.fsi .ico{width:17px;height:17px;color:var(--navy)}
+.suc-icon .ico{width:38px;height:38px;color:#fff}
+.about-card{transition:transform .2s,box-shadow .2s,border-color .2s}
+.about-card:hover{transform:translateY(-3px);border-color:rgba(244,124,32,.32);box-shadow:0 12px 34px rgba(11,28,94,.14)}
+
 .about-card h3{font-family:'Lilita One',sans-serif;font-size:1rem;color:var(--navy);margin-bottom:5px}
 .about-card p{font-size:.85rem;color:var(--muted);line-height:1.65}
 
@@ -462,9 +487,9 @@ footer span{color:var(--orange)}
       <div class="hero-tagline">Navigating Life After School; A Journey From Now !!!</div>
 
       <div class="hero-pills">
-        <div class="pill">📅 29th – 30th May</div>
-        <div class="pill">✈️ Telegram Platform</div>
-        <div class="pill free">🎉 FREE — Register Now</div>
+        <div class="pill"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>29th – 30th May</div>
+        <div class="pill"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7Z"/></svg>Telegram Platform</div>
+        <div class="pill free"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7"/><path d="M12 7H7.5A2.5 2.5 0 1 1 10 4.5L12 7Zm0 0h4.5A2.5 2.5 0 1 0 14 4.5L12 7Z"/></svg>FREE — Register Now</div>
       </div>
 
       <button class="btn orange" onclick="go('reg')">Secure Your Spot →</button>
@@ -480,22 +505,22 @@ footer span{color:var(--orange)}
     </p>
     <div class="about-grid">
       <div class="about-card">
-        <div class="a-icon">🗓️</div>
+        <div class="a-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg></div>
         <h3>2 Days of Impact</h3>
         <p>29th – 30th May. Live sessions on Telegram — focused, distraction-free, and built for your schedule.</p>
       </div>
       <div class="about-card">
-        <div class="a-icon">🎯</div>
+        <div class="a-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></div>
         <h3>Practical & Real</h3>
         <p>No theory-only content. Every session is grounded in experience from people already on the journey.</p>
       </div>
       <div class="about-card">
-        <div class="a-icon">🔗</div>
+        <div class="a-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.1 0l2-2a5 5 0 0 0-7.1-7.1l-1.1 1.1"/><path d="M14 11a5 5 0 0 0-7.1 0l-2 2A5 5 0 0 0 12 20.1l1.1-1.1"/></svg></div>
         <h3>Community First</h3>
         <p>Connect with final-year students, graduates, and young entrepreneurs before, during, and after the event.</p>
       </div>
       <div class="about-card">
-        <div class="a-icon">💻</div>
+        <div class="a-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M2 19h20"/></svg></div>
         <h3>Tech Resources</h3>
         <p>Interested in learning a tech skill? Tell us at registration and we'll point you in the right direction.</p>
       </div>
@@ -508,9 +533,9 @@ footer span{color:var(--orange)}
       <div class="sec-eyebrow">Who Should Attend</div>
       <h2 class="sec-title">This event is built for you if…</h2>
       <div class="who-tags">
-        <span class="who-tag hi">🎓 Final Year Students</span>
-        <span class="who-tag hi">💼 Young Entrepreneurs</span>
-        <span class="who-tag hi">🎓 Recent Graduates</span>
+        <span class="who-tag hi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 9 12 4 2 9l10 5 10-5Z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/><path d="M22 9v6"/></svg>Final Year Students</span>
+        <span class="who-tag hi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg>Young Entrepreneurs</span>
+        <span class="who-tag hi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 9 12 4 2 9l10 5 10-5Z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/><path d="M22 9v6"/></svg>Recent Graduates</span>
         <span class="who-tag">Workers finding direction</span>
         <span class="who-tag">Freelancers building a brand</span>
         <span class="who-tag">Anyone asking "what's next?"</span>
@@ -596,17 +621,17 @@ footer span{color:var(--orange)}
 
     <div class="spk-highlights">
       <div class="spk-hl">
-        <div class="shl-i">🏫</div>
+        <div class="shl-i"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V9l7-4 7 4v12"/><path d="M9 21v-6h6v6M9 11h.01M12 11h.01M15 11h.01"/></svg></div>
         <div class="shl-l">Organisations</div>
         <div class="shl-v">D-Maths / WPA / IJA</div>
       </div>
       <div class="spk-hl">
-        <div class="shl-i">📍</div>
+        <div class="shl-i"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-5.2 7-12a7 7 0 0 0-14 0c0 6.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
         <div class="shl-l">Based In</div>
         <div class="shl-v">Asaba, Delta State</div>
       </div>
       <div class="spk-hl">
-        <div class="shl-i">💻</div>
+        <div class="shl-i"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M2 19h20"/></svg></div>
         <div class="shl-l">Discipline</div>
         <div class="shl-v">EdTech & Web Dev</div>
       </div>
@@ -634,7 +659,7 @@ footer span{color:var(--orange)}
     <div class="spk-hero-inner">
       <div class="spk-photo">
         <img src="image2.png" alt="Amayindi Yakubu"/>
-        👤
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 22a8 8 0 0 1 16 0"/></svg>
       </div>
       <div>
         <div class="spk-htag">Speaker · Session 2</div>
@@ -658,17 +683,17 @@ footer span{color:var(--orange)}
 
     <div class="spk-highlights">
       <div class="spk-hl">
-        <div class="shl-i">📰</div>
+        <div class="shl-i"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h14a2 2 0 0 1 2 2v12H6a2 2 0 0 1-2-2V5Z"/><path d="M8 9h6M8 13h8M8 17h5M20 8h1v9a2 2 0 0 1-2 2"/></svg></div>
         <div class="shl-l">Field</div>
         <div class="shl-v">Journalism & Media</div>
       </div>
       <div class="spk-hl">
-        <div class="shl-i">📍</div>
+        <div class="shl-i"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-5.2 7-12a7 7 0 0 0-14 0c0 6.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
         <div class="shl-l">Based In</div>
         <div class="shl-v">Asaba, Delta State</div>
       </div>
       <div class="spk-hl">
-        <div class="shl-i">🎯</div>
+        <div class="shl-i"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></div>
         <div class="shl-l">Focus</div>
         <div class="shl-v">Brand & Storytelling</div>
       </div>
@@ -702,7 +727,7 @@ footer span{color:var(--orange)}
 
       <!-- 1. Personal -->
       <div class="fsec">
-        <div class="fsec-title"><div class="fsi">👤</div>Personal Information</div>
+        <div class="fsec-title"><div class="fsi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 22a8 8 0 0 1 16 0"/></svg></div>Personal Information</div>
         <div class="frow">
           <label>Full Name <em>*</em></label>
           <input type="text" id="f-name" placeholder="e.g. Chioma Adeyemi"/>
@@ -724,7 +749,7 @@ footer span{color:var(--orange)}
 
       <!-- 2. Student -->
       <div class="fsec">
-        <div class="fsec-title"><div class="fsi">🎓</div>Student Status</div>
+        <div class="fsec-title"><div class="fsi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 9 12 4 2 9l10 5 10-5Z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/><path d="M22 9v6"/></svg></div>Student Status</div>
         <div class="frow">
           <label>Are you currently a student? <em>*</em></label>
           <div class="radio-g">
@@ -751,7 +776,7 @@ footer span{color:var(--orange)}
 
       <!-- 3. Occupation -->
       <div class="fsec">
-        <div class="fsec-title"><div class="fsi">💼</div>Occupation / Role</div>
+        <div class="fsec-title"><div class="fsi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg></div>Occupation / Role</div>
         <div class="frow">
           <label>Which best describes you? <em>*</em> <small>(select all that apply)</small></label>
           <div class="chips" id="occ-chips">
@@ -786,7 +811,7 @@ footer span{color:var(--orange)}
 
       <!-- 4. Tech -->
       <div class="fsec">
-        <div class="fsec-title"><div class="fsi">💻</div>Tech Interest</div>
+        <div class="fsec-title"><div class="fsi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M2 19h20"/></svg></div>Tech Interest</div>
         <div class="frow">
           <label>Are you interested in learning a tech skill?</label>
           <div class="radio-g">
@@ -806,7 +831,7 @@ footer span{color:var(--orange)}
 
       <!-- 5. Consent -->
       <div class="fsec">
-        <div class="fsec-title"><div class="fsi">✅</div>Permissions</div>
+        <div class="fsec-title"><div class="fsi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/><circle cx="12" cy="12" r="10"/></svg></div>Permissions</div>
         <label class="cbrow">
           <input type="checkbox" id="f-updates"/>
           <div class="cbl">
@@ -828,7 +853,7 @@ footer span{color:var(--orange)}
 
     <!-- SUCCESS -->
     <div id="reg-success" class="success">
-      <div class="suc-icon">🎉</div>
+      <div class="suc-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.2 6.2L20 10l-5.8 1.8L12 18l-2.2-6.2L4 10l5.8-1.8L12 2Z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15Z"/></svg></div>
       <h2>You're Registered!</h2>
       <p>Welcome to Nea Poreia. Check your email for your <strong>Telegram invite link</strong>. The event starts <strong>29th May</strong> — we'll see you there!</p>
       <button class="btn" onclick="go('home')">Back to Home</button>
