@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -445,6 +445,67 @@ footer span{color:var(--orange)}
     height:220px;
   }
 }
+
+
+/* ── COUNTDOWN / FAQ / FLOATING ACTIONS ───────────────────── */
+.countdown-wrap{
+  max-width:580px;margin:0 auto 28px;padding:14px;
+  border:1px solid rgba(255,255,255,.45);border-radius:22px;
+  background:rgba(255,255,255,.72);backdrop-filter:blur(16px);
+  box-shadow:0 18px 45px rgba(11,28,94,.16)
+}
+.countdown-label{
+  font-size:.68rem;font-weight:900;letter-spacing:2.8px;text-transform:uppercase;
+  color:var(--orange);margin-bottom:10px
+}
+.countdown-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.cd-box{
+  background:#fff;border:1px solid rgba(11,28,94,.09);border-radius:16px;
+  padding:12px 8px;box-shadow:0 8px 20px rgba(11,28,94,.08)
+}
+.cd-num{display:block;font-family:'Lilita One',sans-serif;font-size:clamp(1.35rem,4vw,2.05rem);line-height:1;color:var(--navy)}
+.cd-text{display:block;margin-top:5px;font-size:.63rem;font-weight:900;letter-spacing:1.8px;color:var(--muted)}
+.countdown-ended{font-weight:900;color:var(--orange);padding:8px 0}
+.faq-grid{display:grid;gap:12px;margin-top:30px}
+.faq-item{background:#fff;border:1.5px solid var(--border);border-radius:18px;box-shadow:var(--sh);overflow:hidden}
+.faq-q{
+  width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;
+  background:none;border:0;text-align:left;cursor:pointer;padding:18px 20px;
+  color:var(--navy);font-family:'Nunito',sans-serif;font-weight:900;font-size:.98rem
+}
+.faq-q span:first-child{display:flex;align-items:center;gap:10px}
+.faq-q .ico{width:18px;height:18px;color:var(--orange)}
+.faq-plus{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:rgba(244,124,32,.12);color:var(--orange);transition:.2s;flex-shrink:0}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .28s ease;background:linear-gradient(180deg,#fff,rgba(244,246,251,.7))}
+.faq-a p{padding:0 20px 18px 49px;color:var(--muted);font-size:.94rem;line-height:1.7}
+.faq-item.open .faq-a{max-height:160px}
+.faq-item.open .faq-plus{transform:rotate(45deg);background:var(--orange);color:#fff}
+.fab-wrap{position:fixed;right:22px;bottom:22px;z-index:350;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.fab-menu{display:flex;flex-direction:column;gap:10px;opacity:0;pointer-events:none;transform:translateY(12px);transition:.22s ease}
+.fab-wrap.open .fab-menu{opacity:1;pointer-events:auto;transform:translateY(0)}
+.fab-action{
+  display:flex;align-items:center;gap:10px;text-decoration:none;border:none;cursor:pointer;
+  background:#fff;color:var(--navy);border-radius:999px;padding:11px 15px;
+  font-family:'Nunito',sans-serif;font-size:.84rem;font-weight:900;box-shadow:0 12px 30px rgba(7,20,64,.22);
+  border:1px solid rgba(11,28,94,.08);white-space:nowrap
+}
+.fab-action:hover{transform:translateX(-3px);background:var(--off)}
+.fab-action .ico{width:18px;height:18px;color:var(--orange)}
+.fab-main{
+  width:60px;height:60px;border-radius:50%;border:none;cursor:pointer;
+  display:grid;place-items:center;background:var(--orange);color:#fff;
+  box-shadow:0 14px 38px rgba(244,124,32,.38),0 0 0 8px rgba(244,124,32,.12);
+  transition:.2s
+}
+.fab-main:hover{background:var(--orange-lt);transform:translateY(-2px)}
+.fab-main .ico{width:27px;height:27px}
+.fab-wrap.open .fab-main{transform:rotate(45deg);background:var(--navy)}
+@media(max-width:540px){
+  .countdown-wrap{margin-bottom:24px;padding:12px;border-radius:18px}
+  .countdown-grid{gap:7px}.cd-box{padding:10px 5px;border-radius:14px}.cd-text{font-size:.56rem;letter-spacing:1px}
+  .fab-wrap{right:16px;bottom:16px}.fab-main{width:56px;height:56px}.fab-action{padding:10px 13px;font-size:.8rem}
+}
+
 </style>
 </head>
 <body>
@@ -492,6 +553,16 @@ footer span{color:var(--orange)}
         <div class="pill free"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7"/><path d="M12 7H7.5A2.5 2.5 0 1 1 10 4.5L12 7Zm0 0h4.5A2.5 2.5 0 1 0 14 4.5L12 7Z"/></svg>FREE — Register Now</div>
       </div>
 
+
+      <div class="countdown-wrap" aria-label="Countdown to Nea Poreia">
+        <div class="countdown-label">Event starts in</div>
+        <div class="countdown-grid" id="countdown">
+          <div class="cd-box"><span class="cd-num" id="cd-days">00</span><span class="cd-text">DAYS</span></div>
+          <div class="cd-box"><span class="cd-num" id="cd-hours">00</span><span class="cd-text">HRS</span></div>
+          <div class="cd-box"><span class="cd-num" id="cd-mins">00</span><span class="cd-text">MIN</span></div>
+          <div class="cd-box"><span class="cd-num" id="cd-secs">00</span><span class="cd-text">SEC</span></div>
+        </div>
+      </div>
       <button class="btn orange" onclick="go('reg')">Secure Your Spot →</button>
     </div>
   </section>
@@ -579,10 +650,36 @@ footer span{color:var(--orange)}
     </div>
   </section>
 
+
+  <!-- FAQ -->
+  <section class="sec" id="faq">
+    <div class="sec-eyebrow">Questions &amp; Answers</div>
+    <h2 class="sec-title">Frequently Asked Questions</h2>
+    <p class="sec-body">Quick answers to help you prepare for Nea Poreia and register with confidence.</p>
+    <div class="faq-grid">
+      <div class="faq-item open">
+        <button class="faq-q" type="button" onclick="toggleFaq(this)"><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/><circle cx="12" cy="12" r="10"/></svg>Is registration free?</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><p>Yes. Attendance is free, but registration is required so we can send you the correct event updates and Telegram access details.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" onclick="toggleFaq(this)"><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10h18"/><path d="M5 10V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"/><path d="M6 14h.01M10 14h.01M14 14h.01M18 14h.01"/><path d="M5 18h14"/></svg>Is accommodation available?</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><p>This is an online webinar on Telegram, so accommodation is not required. You can join from anywhere with internet access.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" onclick="toggleFaq(this)"><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg>What should I bring?</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><p>Come with a learning mindset, stable internet connection, your phone or laptop, and something to take notes with.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" onclick="toggleFaq(this)"><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M16 11a4 4 0 0 1 0-8"/><path d="M22 21a7 7 0 0 0-5-6.7"/></svg>Can non-students attend?</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><p>Yes. Final-year students, recent graduates, workers, freelancers, entrepreneurs, BSF members, and friends are welcome.</p></div>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <p>Baptist Student Fellowship — LASUED EPE Chapter<br>
     Nea Poreia Webinar · <span>29th – 30th May</span> · Telegram Platform<br><br>
-    © 2026 BSF LASUED EPE. All rights reserved.</p>
+    © 2025 BSF LASUED EPE. All rights reserved.</p>
   </footer>
 </div>
 
@@ -863,7 +960,52 @@ footer span{color:var(--orange)}
 </div>
 
 
+<!-- FLOATING QUICK ACTIONS -->
+<div class="fab-wrap" id="fab-wrap">
+  <div class="fab-menu" aria-label="Quick actions">
+    <button class="fab-action" type="button" onclick="go('reg');toggleFab(false)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7"/><path d="M12 7H7.5A2.5 2.5 0 1 1 10 4.5L12 7Zm0 0h4.5A2.5 2.5 0 1 0 14 4.5L12 7Z"/></svg>Register Now</button>
+    <a class="fab-action" href="https://wa.me/?text=Hello%20BSF%20LASUED%20EPE%2C%20I%20need%20help%20with%20Nea%20Poreia%20registration." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-5A8.5 8.5 0 1 1 21 11.5Z"/><path d="M9 9.5c.3 2 2 3.8 4 4.5l1.4-1.1 2 .5"/></svg>WhatsApp Support</a>
+    <a class="fab-action" href="https://www.google.com/maps/search/?api=1&query=LASUED%20EPE" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-4.4 7-11a7 7 0 1 0-14 0c0 6.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Directions</a>
+  </div>
+  <button class="fab-main" type="button" onclick="toggleFab()" aria-label="Open quick actions"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+</div>
+
+
 <script>
+
+// ── COUNTDOWN ──
+const EVENT_DATE = new Date('2026-05-29T00:00:00+01:00').getTime();
+function updateCountdown(){
+  const box=document.getElementById('countdown');
+  if(!box)return;
+  const diff=EVENT_DATE-Date.now();
+  if(diff<=0){box.innerHTML='<div class="countdown-ended">Nea Poreia is live — join the journey!</div>';return;}
+  const d=Math.floor(diff/(1000*60*60*24));
+  const h=Math.floor((diff/(1000*60*60))%24);
+  const m=Math.floor((diff/(1000*60))%60);
+  const sec=Math.floor((diff/1000)%60);
+  document.getElementById('cd-days').textContent=String(d).padStart(2,'0');
+  document.getElementById('cd-hours').textContent=String(h).padStart(2,'0');
+  document.getElementById('cd-mins').textContent=String(m).padStart(2,'0');
+  document.getElementById('cd-secs').textContent=String(sec).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+// ── FAQ ACCORDION ──
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  item.classList.toggle('open');
+}
+
+// ── FLOATING QUICK ACTIONS ──
+function toggleFab(force){
+  const fab=document.getElementById('fab-wrap');
+  if(!fab)return;
+  if(typeof force==='boolean')fab.classList.toggle('open',force);
+  else fab.classList.toggle('open');
+}
+
 // ── CONFIG — paste your deployed Apps Script URL here ──
 const GAS_URL = 'https://script.google.com/macros/s/AKfycbxty2QvFZiVw90GsjadSNqpUaYikKPBokR6L111N6pLFKtXLjvYlAvY-otMJKPPlKfU/exec';
 
